@@ -38,7 +38,7 @@ export class PostInfo implements OnInit {
     if (id) {
       this.loadPost(id);
     } else {
-      this.error = 'Invalid article ID';
+      this.error = 'invalid articlee id';
       this.loading = false;
     }
   }
@@ -51,8 +51,8 @@ export class PostInfo implements OnInit {
           this.post = post;
         },
         error: (error) => {
-          console.error('Failed to load post:', error);
-          this.error = 'Failed to load article';
+          console.error('failed to load post', error);
+          this.error = 'failed to load article';
         }
       });
   }

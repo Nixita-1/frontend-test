@@ -1,12 +1,11 @@
 .page-container {
   max-width: 1300px;
   margin: 0 auto;
-  padding: 1.5rem;
+  padding: 40px 75px;
 }
 
 .posts-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1.5rem;
+  gap: 20px;
 }

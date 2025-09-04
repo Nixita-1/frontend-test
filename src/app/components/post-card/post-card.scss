@@ -1,6 +1,6 @@
 .post-card {
   height: 100%;
-  background-color: #fff;
+  background-color: white;
   width: 400px;
   border-radius: 5px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
@@ -40,26 +40,28 @@
   }
 
   .post-summary {
-    font-size: 0.95rem;
-    line-height: 1.4;
-    color: #444;
+    color: gray;
   }
 
   .read-more {
-    font-weight: 700;
-    font-size: 0.95rem;
+    background: none;
+    border: none;
+    padding: 8px 0;
+    font-weight: 600;
     color: var(--main-color);
-    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.2s ease;
 
     &:hover {
+      color: var(--main-color);
       text-decoration: underline;
     }
   }
 }
 
-.highlight {
-  background-color: yellow;
-}
+  .highlight {
+    background-color: yellow;
+  }
 
   mat-card-actions {
     padding: 0;
