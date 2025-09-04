@@ -1,0 +1,28 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  height: 80px;
+  width: 600px;
+  gap: 8px;
+  margin-bottom: 40px;
+
+  .title {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--main-color);
+  }
+
+  .search-field {
+    width: 100%;
+    background: #fff;
+    border-radius: 8px;
+
+    mat-icon {
+      color: #888;
+    }
+
+    input {
+      font-size: 16px;
+    }
+  }
+}

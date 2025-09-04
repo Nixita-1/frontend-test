@@ -1,0 +1,55 @@
+<div class="article-container">
+  <div *ngIf="loading" class="loading-container">
+    <mat-spinner></mat-spinner>
+    <p>Loading article...</p>
+  </div>
+
+  <div *ngIf="error && !loading" class="error-container">
+    <mat-icon>error</mat-icon>
+    <p>{{ error }}</p>
+    <button mat-raised-button color="primary" (click)="goBack()">
+      <mat-icon>arrow_back</mat-icon>
+      Back to homepage
+    </button>
+  </div>
+
+
+  <div *ngIf="post && !loading" class="article-content">
+    <div class="hero-image" [style.background-image]="'url(' + post.image_url + ')'">
+      <div class="hero-overlay">
+        <div class="hero-content">
+          <h1 class="article-title">{{ post.title }}</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="article-body">
+      <div class="article-meta">
+        <span class="publish-date" *ngIf="post.published_at">
+          Published {{ formatDate(post.published_at) }}
+        </span>
+        <span class="news-site" *ngIf="post.news_site">
+          by {{ post.news_site }}
+        </span>
+      </div>
+
+      <div class="article-summary" *ngIf="post.summary">
+        <p class="summary-text">{{ post.summary }}</p>
+      </div>
+
+      <div class="article-source" *ngIf="post.url">
+        <a [href]="post.url" target="_blank" rel="noopener noreferrer" mat-raised-button color="accent">
+          <mat-icon>open_in_new</mat-icon>
+          Read full article on {{ post.news_site }}
+        </a>
+      </div>
+    </div>
+
+    <div class="back-button-container">
+      <button mat-button (click)="goBack()" class="back-button">
+        <mat-icon>arrow_back</mat-icon>
+        Back to homepage
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<header class="header">
+  <span class="title">Filter by keywords</span>
+
+  <mat-form-field appearance="outline" class="search-field">
+    <mat-icon matPrefix>search</mat-icon>
+    <input
+      matInput
+      placeholder="Enter keywords"
+      (input)="onInput($event)"
+    />
+  </mat-form-field>
+</header>

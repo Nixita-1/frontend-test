@@ -1,0 +1,19 @@
+<div class="page-container">
+
+  <app-header (keywordChange)="onSearchChange($event)"></app-header>
+
+  @if (loading) {
+    <div>Loading...</div>
+  } @else {
+    <p>Results: {{ (filteredPosts$ | async)?.length }}</p>
+
+    <div class="posts-grid">
+      @for (post of filteredPosts$ | async; track post.id) {
+        <app-post-card
+          [post]="post"
+          [highlightKeywords]="(searchKeyword$ | async) ?? ''">
+        </app-post-card>
+      }
+    </div>
+  }
+</div>

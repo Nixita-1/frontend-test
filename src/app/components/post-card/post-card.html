@@ -1,0 +1,31 @@
+<mat-card class="post-card">
+  <img mat-card-image [src]="post.image_url" alt="{{ post.title }}" />
+
+  <mat-card-content>
+    <p class="post-date">
+      <mat-icon class="icon">calendar_today</mat-icon>
+      {{ post.published_at | date:'MMMM d, y' }}
+    </p>
+
+    <h2 class="post-title">
+      @for (part of highlightedParts(post.title); track part.value) {
+        <span [class.highlight]="part.highlight">{{ part.value }}</span>
+      }
+    </h2>
+
+    <p class="post-summary">
+      @for (part of highlightedParts(post.summary, 100); track part.value) {
+        <span [class.highlight]="part.highlight">{{ part.value }}</span>
+      }
+      @if (post.summary.length > 100) {
+        <span>...</span>
+      }
+    </p>
+
+    <mat-card-actions>
+      <button mat-button color="primary" (click)="goToArticle(post)" class="read-more">
+        Read more →
+      </button>
+    </mat-card-actions>
+  </mat-card-content>
+</mat-card>

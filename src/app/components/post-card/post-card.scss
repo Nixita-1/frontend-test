@@ -1,0 +1,73 @@
+.post-card {
+  height: 100%;
+  background-color: #fff;
+  width: 400px;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  img {
+    height: 217px;
+    object-fit: cover;
+  }
+
+  .icon {
+    height: 100%;
+  }
+
+  .post-date {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: var(--main-color);
+
+    mat-icon {
+      font-size: 16px;
+    }
+  }
+
+  .post-title {
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--main-color);
+  }
+
+  .post-summary {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: #444;
+  }
+
+  .read-more {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--main-color);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.highlight {
+  background-color: yellow;
+}
+
+  mat-card-actions {
+    padding: 0;
+    margin-top: auto;
+  }
+
+  mat-card-content {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+  }
