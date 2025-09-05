@@ -52,7 +52,7 @@ export class PostInfo implements OnInit {
         },
         error: (error) => {
           console.error('failed to load post', error);
-          this.error = 'failed to load article';
+          this.error = 'failed to load post';
         }
       });
   }
